@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Login - Validar</title>
+	<style type="text/css">
+		 input, legend, button{
+			display: block;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		label{
+			margin-left: 44%;
+			width: 10px;
+		}
+	</style>
+</head>
+<body>
+<form method="POST" action="#">
+	<fieldset>
+
+	<legend>Login</legend>
+	<label for="nome"> Nome:</label>
+	<input type="text" name="nome" id="nome" required placeholder="digite seu nome">
+
+	<label for="nickname">Digite seu apelido:</label>
+	<input type="text" name="nickname" id="nickname" required placeholder="digite seu nickname">
+
+	<!-- 
+			** CRIANDO UM PADRÃO DE SENHA DE 6 INCLUINDO LETRAS DE A-Z E BARRA DE ESPACO
+			USANDO ATRIBUTO PATTERN (AUTOMATICAMENTE JA VALIDA)
+			** TROCANDO TEXTO REQUIRED COM JS INLINE COM EVENTO onValid
+			** VALIDANDO SENHAS PARA QUE SEJAM DIGITADAS IGUAIS COM EVENTO onChange
+
+	 -->
+	<label for="senha">Digite uma Senha:</label>
+	<input type="password" name="s1" pattern="[a-z ]{6,}" oninvalid="this.setCustomValidity('Digite uma senha válida(6 letras + espaço')" onChange="form.s2.pattern=this.value;" required placeholder="escolha sua senha" />
+		<!-- funcao setCustomValidity troca o texto padrao direto no input -->
+		<!-- funcao onChangepega o name s2 para que a senha seja igual do campo s1 -->
+	<label for="senha2">Repita sua senha:</label>
+	<input type="password" name="s2" pattern="[a-z ]{6,}" required placeholder="repita sua senha "/>
+
+	<button>Enviar</button>
+	</fieldset>
+
+	<!-- MUDANDO TEXTO PADRAO DO NAVAGADOR COM METODO setCustomValidity -->
+	<script type="text/javascript">
+			// pegando elemento pela id="nome"
+			document.getElementById('nome').oninvalid = function() {  
+   			// remove mensagens de erro padrão
+   			this.setCustomValidity("");
+   			// faz a validação novamente
+   			if (!this.validity.valid) {
+	       	// se estiver inválido, coloca a mensagem-->
+	       	this.setCustomValidity("Seu nome está invalido!");
+			    }
+			};
+	</script>
+</form>
+</body>
+</html>

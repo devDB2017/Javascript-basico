@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS Aula 01</title>
+		<script type="text/javascript">
+		/*
+		FAÇA UM PROGRAMA QUE LEIA A COTACAO DE DOLAR
+		QUE LEIA UM VALOR EM DOLAR
+		E CONVERTA ESSE VALOR PARA REAL E MOSTRE O RESULTADO
+		*/
+	 	var cotacao =  parseInt(prompt('Digite a cotacao do dolar hoje: '));
+	 	var dolar = parseInt(prompt('Digite o valor em dolar: '));
+	 	var conversao = dolar * cotacao
+	 	console.log('O valor em reais é R$:' +conversao);
+		/*
+		FAÇA UM PROGRAMA QUE CALCULE A MEDIA FINAL PARA
+		DUAS NOTAS, SENDO ELAS DIGITADAS PELO USUARIO
+		*/
+		var n1 = parseInt(prompt("Digite sua 1ºnota: "));
+		var n2 = parseInt(prompt("Digite sua 2ºnota: "));
+		var soma = (n1 + n2) / 2;
+		// var media = soma / 2;
+		alert('A média fina para 2 notas é ' + soma);
+		/*
+		FAÇA UM PROGRAMA QUE RECEBA O SALARIO ATUAL, O VALOR DO REAJUSTE
+		E MOSTRE O NOVO SALARIO
+		*/
+		var salAtual = parseInt(prompt("Digite seu salário Atual: "));
+		var reajuste = parseInt(prompt("Digite o rejuste: "));
+		var porcentagem = reajuste / 100;
+		var salNovo = (porcentagem * salAtual )+ salAtual;
+		console.log('O valor do seu sálario com reajuste é de: R$' + salNovo); 
+	 	</script>
+</head>
+<body>
+
+</body>
+</html>

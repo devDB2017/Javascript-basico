@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#ken{
+		background-image: url("sprite.png"); /*CARREGANDO A IMAGEM VIA CSS*/
+		background-position:0px 0px; /*POSICAO DE X E Y EH 0*/
+		background-repeat:repeat;
+		width: 75px;/* LARGURA DO FRAME QUE IRA APARECER A IMAGEM, VER ISSO NO PS*/
+		height: 150px; /*ALTURA DA IMAGEM*/
+		/*border: 2px solid #ccc;*/
+	}
+	img{
+		  position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+	}
+	</style>
+</head>
+<body>
+<div id="ken">
+	<img src="cenario.png">
+</div>
+<script type="text/javascript">
+		var foto = function(){
+	this.elemento = document.getElementById ("ken")
+	this.altura = 148 //DEFININDO ELEMENTO ALTURA IGUAL NO CSS
+	this.largura = 84 //DEFININDO ELEMENTO LARGURA IGUAL NO CSS
+	this.quantidadeDeQuadros = 49 //DEFININDO TAMANHO DE QUADROS DA FOTO
+	this.correr = function (){ //CRIANDO ELEMENTO QUE IRA FAZER O MOVIMENTO
+		//PEGANDO ELEMENTO CSS POSITION E DEIXAR SEM NADA NO X E O Y COM 0
+    this.elemento.style.backgroundPosition = this.quantidadeDeQuadros--* this.largura + "px 0px"
+     if(this.quantidadeDeQuadros ==0) //DECREMENTANDO QUADRO, OU SEJA 10 AO INVES DE 11. POIS INICIA NO 0
+       this.quantidadeDeQuadros =49
+  }
+}
+
+var $foto = new foto () //INCLUINDO MOVIMENTO EM 150 MILISEMOS DE SEGUNDOS
+setInterval(function(){$foto.correr()},70)
+</script>
+</body>
+</html>

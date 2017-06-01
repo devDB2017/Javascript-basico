@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS Aula 03 - Eventos</title>
+	<style type="text/css" >
+		body {
+			background-color: #999;
+			}
+			#imagem{
+				display: block;
+				margin: 20px auto;
+			}
+	</style>
+	<script type="text/javascript">
+	function ligar () {
+		document.getElementById("imagem").src="img/js1.png"; // pegar o elemento pela ID e troca o endereço de imagem//
+	}
+	</script>
+</head>
+<body onload = "alert('oi');">
+	<!-- <img id="imagem" onclick="alert('ola');" src="img/js.png"/> -->
+ 	<img id="imagem" onclick="ligar();" src="img/js.png"/>
+ 
+</body>
+</html>

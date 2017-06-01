@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animação JS</title>
+	<meta charset="UTF-8">
+	<style>
+	#cavalo{
+		background-image: url("Horse.png"); /*CARREGANDO A IMAGEM VIA CSS*/
+		background-position:0px 0px; /*POSICAO DE X E Y EH 0*/
+		background-repeat:repeat;
+		width: 358px;/* LARGURA DO FRAME QUE IRA APARECER A IMAGEM, VER ISSO NO PS*/
+		height: 229px; /*ALTURA DA IMAGEM*/
+	}
+	</style>
+</head>
+<body>
+	<section id="cavalo"><!-- SECTION COM A IMAGEM A SER CARREGADA NO CSS --></section>
+
+	<script type="text/javascript">
+	//CRIANDO atributos 
+		var foto = function(){
+	this.elemento = document.getElementById ("cavalo")
+	this.altura = 229 //DEFININDO ELEMENTO ALTURA IGUAL NO CSS
+	this.largura = 358 //DEFININDO ELEMENTO LARGURA IGUAL NO CSS
+	this.quantidadeDeQuadros = 11 //DEFININDO TAMANHO DE QUADROS DA FOTO
+	this.correr = function (){ //CRIANDO ELEMENTO QUE IRA FAZER O MOVIMENTO
+		//PEGANDO ELEMENTO CSS POSITION E DEIXAR SEM NADA NO X E O Y COM 0
+    this.elemento.style.backgroundPosition = this.quantidadeDeQuadros--* this.largura + "px 0px"
+     if(this.quantidadeDeQuadros ==0) //DECREMENTANDO QUADRO, OU SEJA 10 AO INVES DE 11. POIS INICIA NO 0
+       this.quantidadeDeQuadros =11
+  }
+}
+
+var $foto = new foto () //INCLUINDO MOVIMENTO EM 150 MILISEMOS DE SEGUNDOS
+setInterval(function(){$foto.correr()},150)
+
+	</script>
+</body>
+</html>
